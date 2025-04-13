@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 20%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 80%;
+  }
+
+  /* Color blindness mode */
+  .color-blind-mode {
+    --primary: 195 100% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 162 100% 31%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 39 100% 45%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 14 100% 42%;
+    --destructive-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile responsiveness improvements */
+@layer utilities {
+  .mobile-container {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+
+  .mobile-padding {
+    @apply py-4 sm:py-6 md:py-8;
+  }
+
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6;
+  }
+
+  /* Tooltip animation */
+  .tooltip-pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+    }
+  }
+
+  /* Improved mobile navigation */
+  .mobile-nav-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .mobile-nav-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 200ms, transform 200ms;
+  }
+
+  .mobile-nav-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-nav-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 200ms, transform 200ms;
+  }
+}
