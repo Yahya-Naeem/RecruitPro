@@ -32,8 +32,8 @@ export default function LoginPage() {
       const formData = new FormData(e.currentTarget)
       const email = formData.get("email") as string
       const password = formData.get("password") as string
-
-      //await signIn(email, password)
+      
+      await signIn(email, password)
 
       toast({
         title: "Logged in successfully",

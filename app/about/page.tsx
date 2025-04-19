@@ -149,13 +149,13 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 bg-gray-200 dark:bg-gray-700">
                     <img
-                      src="/placeholder.svg?height=192&width=192"
+                      src="https://avatars.githubusercontent.com/u/104232936?s=400&u=98140837f94c5c0d15a359fe73415594f97a5eb1&v=4"
                       alt="Yahya"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Yahya</h3>
-                  <p className="text-brand-dark dark:text-brand-light mb-4">Co-Founder & CEO</p>
+                  <p className="text-brand-dark dark:text-brand-light mb-4">Founder & CEO</p>
                   <p className="text-gray-600 dark:text-gray-400">
                     With a background in technology and recruitment, Yahya brings a unique perspective to solving hiring
                     challenges.
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 bg-gray-200 dark:bg-gray-700">
                     <img
-                      src="/placeholder.svg?height=192&width=192"
+                      src="https://avatars.githubusercontent.com/u/128796311?v=4"
                       alt="Mehma"
                       className="w-full h-full object-cover"
                     />

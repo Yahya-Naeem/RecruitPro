@@ -158,10 +158,10 @@ export default function CandidateDashboardPage() {
                   </CardContent>
                 </Card>
               </TooltipTrigger>
-              <TooltipContent side="bottom" className="bg-brand-dark text-white p-3">
+              {/* <TooltipContent side="bottom" className="bg-brand-dark text-white p-3">
                 <p className="font-semibold">Complete your profile</p>
                 <p className="text-sm">A complete profile increases your chances of getting hired!</p>
-              </TooltipContent>
+              </TooltipContent> */}
             </Tooltip>
 
             <Card className="transition-all hover:shadow-md">

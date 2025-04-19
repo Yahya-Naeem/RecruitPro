@@ -1,18 +1,17 @@
 import { initializeApp, getApps, getApp } from "firebase/app"
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth"
-import { getFirestore } from "firebase/firestore"
+import { getFirestore  } from "firebase/firestore";
 import { getStorage } from "firebase/storage"
 import { getAnalytics } from "firebase/analytics"
-
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD_6szsaDs6_uy4Hq6p6XaS0xUKPCuS1H4",
-  authDomain: "recruitpro-7b5f8.firebaseapp.com",
-  projectId: "recruitpro-7b5f8",
-  storageBucket: "recruitpro-7b5f8.firebasestorage.app",
-  messagingSenderId: "348530358097",
-  appId: "1:348530358097:web:c1988b4925c5b296980570",
-  measurementId: "G-SJLJ40HZ6K",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
 
 // Initialize Firebase
@@ -24,9 +23,14 @@ const storage = getStorage(app)
 // Initialize Analytics (only in browser environment)
 let analytics = null
 if (typeof window !== "undefined") {
-  analytics = getAnalytics(app)
+    analytics = getAnalytics(app)
 }
 
+if (app) {
+  console.log("Firebase app initialized successfully!");
+} else {
+  console.error("Firebase app initialization failed!");
+}
 // Auth providers
 const googleProvider = new GoogleAuthProvider()
 const facebookProvider = new FacebookAuthProvider()
